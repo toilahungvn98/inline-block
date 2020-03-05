@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline-block</title>
+
+    <style>
+        .inline {
+            background-color: red;
+            width: 100px;   /*not working */
+            height: 100px;  /*not working */
+            margin-top: 500px;  /*not working */
+            margin-bottom: 500px; /*not working */
+            /* margin-right , margin-left :  working */
+             /* padding: 50px;  */ /* bỏ comment dòng này */ 
+
+        }
+
+
+        /* inline-block  */
+
+
+
+        .item {
+            background-color: green;
+            display: inline-block;
+            /* padding: 50px;  */ /* bỏ comment dòng này */ 
+            margin: 50px;
+        }
+
+
+        /* menu = inline-block */
+
+        .list {
+             /* loại bỏ phần đệm margin và padding mặc định của thẻ ul  */
+            padding: 0;
+            margin: 0;
+        }
+        .list-item {
+            list-style: none; /* loại bỏ dấu chấm trước thẻ li */
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .list-item a {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none; /* loại bỏ dấu gạch chân */
+            transition: all .3s ease-out;
+        }
+        .list-item a:hover {
+            color: red;
+        }
+
+         /* menu = flex */
+
+        .menu {
+            display: flex;
+            /* loại bỏ phần đệm margin và padding mặc định của thẻ ul  */
+            padding: 0;
+            margin: 0;
+        }
+        .menu-item {
+            list-style: none; /* loại bỏ dấu chấm trước thẻ li */
+            margin-right: 10px;
+        }
+        .menu-item a {
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none; /* loại bỏ dấu gạch chân */
+            transition: all .3s ease-out;
+        }
+        .menu-item a:hover {
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Inline</h1>
+
+    <span class="inline">1</span>
+    <span class="inline">2</span>
+    <span class="inline">3</span>
+    <span class="inline">4</span>
+
+    <!-- 
+        Các item có kiểu display này không thể set width và height.
+        set được padding nhưng mất độ cao, và đè lên phần tử bên dưới.
+        chỉ sử dụng được margin right và margin-left
+    -->
+    <hr>
+    <h1>Inline-block</h1>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+
+
+    <!-- set được width, height, margin, padding đủ 4 hướng. ko bị mất độ cao -->
+
+    <hr>
+    <h1>block</h1>
+    <p> biết rồi khỏi nói :)) </p>
+
+
+
+    <hr>
+    <h1>Ví dụ làm menu nằm ngang = inline-block</h1>
+
+    <ul class="list">
+        <li  class="list-item">
+            <a href="">Home</a>
+        </li>
+        <li  class="list-item">
+            <a href="">Product</a>
+        </li>
+        <li  class="list-item">
+            <a href="">About</a>
+        </li>
+        <li  class="list-item">
+            <a href="">Contact</a>
+        </li>
+    </ul>
+
+    <hr>
+    <h1>Ví dụ làm menu nằm ngang = flexbox</h1>
+
+    <ul class="menu">
+        <li  class="menu-item">
+            <a href="">Home</a>
+        </li>
+        <li  class="menu-item">
+            <a href="">Product</a>
+        </li>
+        <li  class="menu-item">
+            <a href="">About</a>
+        </li>
+        <li  class="menu-item">
+            <a href="">Contact</a>
+        </li>
+    </ul>
+
+</body>
+
+</html>
